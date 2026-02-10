@@ -152,7 +152,6 @@ This is a real boundary. The coexistence argument is conditional: it holds if th
 
 - Can this model be formalized mathematically — quantifying the diversity of distinguishable states produced by living versus non-living systems exploiting the same energy gradients?
 - Are there fundamental physical limits to how much state diversity can be extracted from a given energy gradient?
-- How does this model interact with the black hole information paradox and the holographic principle?
 - Does the model predict anything testable about where life should arise or what forms it should take?
 - Can it be formally proven that the reachable state spaces of different physical substrates are non-overlapping, and if so, to what degree?
 - At what point, if ever, does resource scarcity become a realistic constraint — and does the trivial energy cost of biological life make this threshold practically unreachable?
