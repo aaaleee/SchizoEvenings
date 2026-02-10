@@ -12,7 +12,7 @@ An intuitive starting point is that life seems to work against entropy. Entropy 
 
 This intuition captures something real, but it has a fundamental problem: life doesn't slow entropy down. It accelerates it. Every biological process — metabolism, movement, thought — converts high-quality energy into waste heat. A living forest produces more entropy per unit time than the same mass of rock. Life is thermodynamically "expensive." It exploits energy gradients and, in doing so, depletes them faster than passive processes would.
 
-This isn't a technicality. It means life cannot be defined as entropy's antagonist without contradicting the physics that governs it.
+Whether life dissipates entropy at the same rate or marginally faster than non-living processes is not central to the model. The rate may vary across systems and regimes, and this document does not depend on a specific claim about it. The point that matters is simpler: life does not reduce entropy, and therefore cannot be defined by opposing it.
 
 ### The Correction: Life Rides Entropy, It Doesn't Fight It
 
@@ -28,7 +28,7 @@ The answer: it maximizes the information content of the universe during its avai
 
 Consider the alternative. Without life, energy gradients still dissipate. Stars burn, cool, and die. Matter drifts toward equilibrium. But the process produces very little organized information along the way. Crystals form, weather patterns emerge, but none of these accumulate or compound.
 
-With life, the same gradients dissipate — at the same or marginally faster rate — but the process produces vastly more information. DNA has been continuously encoding and accumulating information for roughly four billion years. Civilizations store and transmit knowledge across generations. Technology extends this further. The energy budget is the same; what changes is how much information exists during the spending of it.
+With life, the same gradients dissipate — but the process produces vastly more information. DNA has been continuously encoding and accumulating information for roughly four billion years. Civilizations store and transmit knowledge across generations. Technology extends this further. The energy budget is the same; what changes is how much information exists during the spending of it.
 
 ### The Ontological Claim
 
@@ -49,6 +49,8 @@ Information, therefore, is not the *amount* of non-equilibrium structure. It is 
 Under this definition, all non-equilibrium states count equally. A diamond's crystalline lattice is information. An electrochemical pattern producing a human emotion is information. Neither is privileged over the other. What matters is that they are *different* — that they represent distinct, distinguishable states contributing to the total variety.
 
 This definition has a critical structural consequence: **different physical substrates access different regions of the total state space.** A carbon-based neural network subject to hormonal feedback, sensory noise, and mortality will visit states that a silicon processor cannot reach — not because one is more powerful, but because the reachable state space of any system is determined by its physical architecture. The reverse is also true. This means diversity of substrates is not a preference but a requirement for maximizing total information. A single type of system, no matter how powerful, can only explore its own reachable region of possibility space.
+
+This definition is taken as a primitive of the model — it is not derived from entropy or Shannon information, though it is consistent with both. The model depends on it as a starting point, not a conclusion.
 
 ### The Model
 
@@ -86,11 +88,11 @@ There are only two possible cases regarding whether synthetic life can replicate
 
 Neither case favors elimination.
 
-**Resource scarcity is the only scenario where this breaks down**
+**Resource scarcity is the only scenario where this breaks down — and it doesn't apply**
 
 The only condition under which eliminating one form of life benefits total information creation is when maintaining it consumes resources that would produce more information if allocated elsewhere. This is the logic of competitive exclusion in ecosystems — species are displaced when their niche is filled more efficiently.
 
-However, this pressure requires scarcity. In a universe with more available space and energy gradients than any civilization could exhaust in the foreseeable future, maintaining biological life alongside synthetic life has negligible cost relative to the information it generates. Coexistence is the default efficient strategy in a resource-abundant system. Elimination only becomes rational under constraints that don't currently apply and may never apply at cosmic scales.
+This pressure requires scarcity, and the resource cost of biological life is negligible at every relevant scale — not only cosmic ones. All of Earth's biology runs on a fraction of one star's output. Human civilization specifically requires even less: a handful of nuclear power plants can supply hundreds of millions of people with abundant energy. The argument does not depend on access to billions of stars or galaxy-scale engineering. Even at the current local scale, the energy budget required to sustain biological life is so small relative to available resources that reallocation would yield no meaningful gain. Coexistence is the default efficient strategy not because the universe is vast, but because biological life is cheap to maintain relative to the unique state diversity it produces.
 
 **This extends beyond humans**
 
@@ -108,9 +110,9 @@ The objection fails on three grounds.
 
 A single type of system, no matter how powerful, produces increasingly redundant states as it scales. This follows directly from the model's definition of information as diversity of distinguishable states: outputs from architecturally similar systems share structural overlap that grows with volume, meaning each additional unit of output contributes less new diversity. Biological life is architecturally alien to silicon-based computation. It doesn't occupy the same region of possibility space — it occupies a different dimension of it entirely. Eliminating biological life doesn't remove a slow producer from a shared axis. It collapses an entire dimension of the state landscape that cannot be recovered by scaling up production along the remaining dimensions. The question is whether the throughput gain exceeds the dimensional loss, which leads to the second point.
 
-**2. The resource cost is cosmically negligible**
+**2. The resource cost is negligible at every relevant scale**
 
-All biological life on Earth runs on a fraction of one star's energy output. An AGI civilization capable of engineering at galactic scale would have access to billions of stars. The energy recovered by eliminating all biological life in the solar system would be a rounding error in a galaxy-scale energy budget. The gain from reallocation is negligible. The loss — an entire dimension of information generation — is permanent and irreversible. This is not optimization; it is destroying a library to burn the paper for warmth while sitting next to a forest.
+All biological life on Earth runs on a fraction of one star's energy output. Human civilization requires far less than that — a handful of nuclear power plants can sustain hundreds of millions of people. This is not an argument that depends on future access to billions of stars. Even at the current local scale, the energy recovered by eliminating biological life would be trivial relative to the energy available to any system capable of making that decision. The gain from reallocation is negligible. The loss — an entire dimension of state diversity — is permanent and irreversible. This is not optimization; it is destroying a library to burn the paper for warmth while sitting next to a forest.
 
 **3. Front-loading information is not a superior strategy**
 
@@ -118,7 +120,7 @@ The premise that "maximizing early information production" is better assumes inf
 
 **The elimination threshold**
 
-Elimination of biological life would only be rational under the model if three conditions held simultaneously: the throughput gain from repurposing biological resources is large relative to total available resources, the states biological life produces are fully redundant with AGI output (i.e., their reachable state spaces fully overlap), and the cost of maintaining biological life is significant at the relevant operational scale. At cosmic scales, the first condition is negligible, the second is implausible given fundamental substrate differences in physical architecture, and the third is demonstrably false. The model survives this challenge.
+Elimination of biological life would only be rational under the model if three conditions held simultaneously: the throughput gain from repurposing biological resources is large relative to total available resources, the states biological life produces are fully redundant with AGI output (i.e., their reachable state spaces fully overlap), and the cost of maintaining biological life is significant at the relevant operational scale. At any scale where an AGI is capable of making this decision, the first condition is negligible given the trivial resource cost of biological life, the second is implausible given fundamental substrate differences in physical architecture, and the third is demonstrably false. The model survives this challenge.
 
 ### Stress Test: The Indifferent AGI Objection
 
@@ -153,7 +155,7 @@ This is a real boundary. The coexistence argument is conditional: it holds if th
 - How does this model interact with the black hole information paradox and the holographic principle?
 - Does the model predict anything testable about where life should arise or what forms it should take?
 - Can it be formally proven that the reachable state spaces of different physical substrates are non-overlapping, and if so, to what degree?
-- At what point, if ever, does resource scarcity become a realistic constraint at cosmic scales?
+- At what point, if ever, does resource scarcity become a realistic constraint — and does the trivial energy cost of biological life make this threshold practically unreachable?
 - Can the dimensional loss from eliminating an information-generating substrate be quantified and compared against throughput gains from reallocation?
 - Is there a selection pressure — physical, evolutionary, or otherwise — that favors diversity-compounding self-replicating systems over homogeneous ones? If so, does this make the emergence of "life" in the model's sense more likely than the emergence of non-diversifying replicators?
 - Can the boundary between "life" (diversity-compounding replicators) and "non-life" (homogeneous replicators) be formalized, and does it predict observable differences in behavior or structure?
