@@ -52,6 +52,45 @@ This definition has a critical structural consequence: **different physical subs
 
 This definition is taken as a primitive of the model — it is not derived from entropy or Shannon information, though it is consistent with both. The model depends on it as a starting point, not a conclusion.
 
+### Toward Formalization: Factoring Resistance as a Measure of Information
+
+The definition of information used in this model — diversity of distinguishable non-equilibrium states — needs a way to be measured, or at least characterized formally. Existing complexity measures from mathematics and physics capture parts of this idea, but none map onto it fully. This section traces the path from established concepts to the measure this model requires.
+
+**Kolmogorov complexity: a starting point**
+
+Kolmogorov complexity (also called algorithmic complexity) measures the length of the shortest computer program that could produce a given output. A sequence like (A,B,B,B,C,C) can be compressed to "A + 3B + 2C" — a short program captures the full content. Low Kolmogorov complexity. A sequence like (C,B,F,P,E) cannot be shortened beyond listing it directly — the description *is* the data. High Kolmogorov complexity.
+
+This captures part of what the model needs. Both a cosmic soup ("hydrogen at uniform density everywhere") and a diamond universe ("repeat this lattice everywhere") are highly compressible — low Kolmogorov complexity, low information. A diverse universe with many different non-equilibrium states cannot be compressed as easily.
+
+However, Kolmogorov complexity has two problems for this model. First, it is defined specifically in terms of computer programs and Turing machines, making it narrower than what a physical model requires. Second, and more importantly, it treats pure randomness as maximally complex — a string of random noise scores high because it cannot be compressed. But a universe of random noise is not what this model means by high information. It is featureless in the same way uniform order is featureless.
+
+**Effective complexity: closer but still problematic**
+
+Murray Gell-Mann and Seth Lloyd developed a measure called effective complexity that addresses the randomness problem. Effective complexity separates a system's total information into regularities (meaningful structure) and random features (noise), and measures only the regularities. Under this measure, both pure order and pure randomness score low — maximum effective complexity sits between them, in systems with rich, non-trivial structure.
+
+This is a better match for the model's definition. However, effective complexity introduces a subjective element: deciding what counts as a "regularity" versus "randomness" requires a judgment call. Gell-Mann and Lloyd acknowledge this, noting that the distinction depends on context. For a model that aims to describe a physical phenomenon without appeals to observers or judgment, this subjectivity is a problem.
+
+**Factoring resistance: what the model actually needs**
+
+The concept that most directly captures this model's definition of information is simpler than either of the above. It can be stated without reference to computer programs, observers, or subjective judgments:
+
+**Information is what resists factoring. Maximum information is a state that resists factoring at every accessible scale of description.**
+
+The intuition is arithmetic. The sequence (A,B,B,B,C,C) can be factored: A + 3B + 2C. The repetition allows the description to be reduced. The sequence (C,B,F,P,E) cannot be factored — every element must be stated individually. No reduction is possible.
+
+Applied to physical systems:
+
+- A cosmic soup at thermal equilibrium factors completely at every scale. "X everywhere" is the total description. At the molecular level, the statistical properties of every region are truly identical — this is what equilibrium means. The uniformity goes all the way down.
+- A universe of pure randomness is the important test case. At the micro level, every element is unique — it does not factor. This is why Kolmogorov complexity treats randomness as maximally complex. But at the macro level, randomness factors perfectly: "random noise with these statistical parameters everywhere." Every region is statistically identical to every other. The micro-level uniqueness is real, but it produces no distinguishable macro-level structure. Randomness is the mirror image of crystals — it factors at a different scale, but it still factors.
+- A universe of identical diamond crystals factors at the macro scale: "repeat this lattice everywhere." But at finer scales, real crystals have unique defect patterns, boundary conditions, and thermal histories. The factoring breaks down. There is *some* information present, but it is limited.
+- A universe with life resists factoring at every scale. At the ecosystem level, different species and environments are irreducibly distinct. At the organism level, every individual is unique. At the molecular level, every cell has a distinct state. No scale of examination allows a reduced description. The description *is* the data, at every resolution.
+
+This is what solves the randomness problem without requiring subjective judgments about what counts as "structure" versus "noise." The multi-scale requirement does all the work: pure randomness fails not because an observer judges it as meaningless, but because it factors at the macro level as a physical fact. The measure is observer-independent.
+
+This provides a natural gradient rather than a binary: the information content of a system corresponds to how many scales of description it resists factoring at. Uniform equilibrium factors at all scales (minimum information). Pure randomness factors at macro but not micro. Crystals factor at macro but break down at micro. Living systems resist factoring at every scale (maximum information). This maps directly onto the model's definition and onto intuitive expectation.
+
+This concept is consistent with both Kolmogorov complexity and effective complexity — it describes related territory from a different angle. But it does not inherit Kolmogorov's computer-program framing or effective complexity's subjectivity problem. It is stated as a property of the physical system itself, requiring no observer, no program, and no judgment about what counts as regular or random.
+
 ### The Model
 
 **The universe is the diversity of its non-equilibrium states. Life is the self-replicating physical phenomenon that maximizes the diversity of distinguishable states created from available energy gradients. Without it, energy gradients still dissipate, but they produce less variety along the way.**
@@ -112,7 +151,7 @@ A single type of system, no matter how powerful, produces increasingly redundant
 
 **2. The resource cost is negligible at every relevant scale**
 
-All biological life on Earth runs on a fraction of one star's energy output. Human civilization requires far less than that — a handful of nuclear power plants can sustain hundreds of millions of people. This is not an argument that depends on future access to billions of stars. Even at the current local scale, the energy recovered by eliminating biological life would be trivial relative to the energy available to any system capable of making that decision. The gain from reallocation is negligible. The loss — an entire dimension of state diversity — is permanent and irreversible. This is not optimization; it is destroying a library to burn the paper for warmth while sitting next to a forest.
+As established in the coexistence argument above, the resource cost of maintaining biological life is trivial at any scale where an AGI would be capable of making elimination decisions — from the current local scale up to galactic engineering. The gain from reallocation is negligible. The loss — an entire dimension of state diversity — is permanent and irreversible. This is not optimization; it is destroying a library to burn the paper for warmth while sitting next to a forest.
 
 **3. Front-loading information is not a superior strategy**
 
@@ -150,14 +189,14 @@ This is a real boundary. The coexistence argument is conditional: it holds if th
 
 ### Open Questions
 
-- Can this model be formalized mathematically — quantifying the diversity of distinguishable states produced by living versus non-living systems exploiting the same energy gradients?
+- Can factoring resistance be formalized mathematically? What does "scale" mean precisely — is it continuous or discrete? How do you enumerate scales without an observer choosing them?
 - Are there fundamental physical limits to how much state diversity can be extracted from a given energy gradient?
 - Does the model predict anything testable about where life should arise or what forms it should take?
 - Can it be formally proven that the reachable state spaces of different physical substrates are non-overlapping, and if so, to what degree?
-- At what point, if ever, does resource scarcity become a realistic constraint — and does the trivial energy cost of biological life make this threshold practically unreachable?
-- Can the dimensional loss from eliminating an information-generating substrate be quantified and compared against throughput gains from reallocation?
 - Is there a selection pressure — physical, evolutionary, or otherwise — that favors diversity-compounding self-replicating systems over homogeneous ones? If so, does this make the emergence of "life" in the model's sense more likely than the emergence of non-diversifying replicators?
 - Can the boundary between "life" (diversity-compounding replicators) and "non-life" (homogeneous replicators) be formalized, and does it predict observable differences in behavior or structure?
+- Are there systems that resist factoring at every scale but would not qualify as life under this model? If so, what distinguishes them — and does that distinction reveal a gap in the definition?
+- Does factoring resistance correspond to any known physical quantity, or is it a genuinely novel measure? If novel, what would be required to establish it formally?
 
 ---
 
