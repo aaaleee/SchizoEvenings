@@ -149,12 +149,28 @@ The more defensible claim is: **randomness collapses macro-level distinguishabil
 
 The distinction matters because:
 
-- A system can be statistically homogeneous at the macro level and still be dynamically rich — meaning its time evolution produces diverse trajectories even if its spatial statistics are uniform. Factoring resistance as defined here is a snapshot measure. A system that looks factorable at every scale at any given moment might produce unfactorable sequences over time.
+- A system can be statistically homogeneous at the macro level and still be dynamically rich — meaning its time evolution produces diverse trajectories even if its spatial statistics are uniform. However, as discussed below, time is simply another coarse-graining dimension. A system whose spatial snapshots are factorable but whose spacetime blocks are not would show high factoring resistance when time is included in the partition.
 - Macro-level statistical descriptions do not always exhaust macro-level distinguishability. Two regions with identical mean and variance could differ in higher-order correlations, spatial structure, or other features not captured by simple statistical parameters.
 
 These are not fatal objections — in most physically relevant cases, genuine thermodynamic randomness really does collapse distinguishability at the macro level. But the claim should be stated as what it is: a strong tendency with well-understood exceptions, not an absolute law.
 
 For the purposes of the model, the relevant claim is narrower and more defensible: **at thermodynamic equilibrium, randomness factors at the macro level as a physical fact, because equilibrium is defined as the state where no macroscopic measurement can distinguish one region from another.** The overclaim arises only when extending this beyond equilibrium to all random-looking systems, which the model does not require.
+
+---
+
+## Time Is Not a Special Case
+
+An apparent weakness of factoring resistance is that it seems to be a snapshot — a measure of a system's state at a single moment. A frozen crystal with complex defect patterns and a dynamic system could hypothetically have identical spatial F(L) profiles at a given instant. If the measure only captures spatial structure, it cannot distinguish static complexity from dynamic complexity.
+
+This dissolves once you notice that nothing in the definition of factoring resistance restricts it to spatial dimensions.
+
+The procedure is: partition a system into blocks, describe each block, ask whether the descriptions compress. The definition says nothing about those blocks being spatial. If you partition into spacetime blocks — size L in space and T in time — the same operation applies. Partition, describe, compress. The rules do not change. The domain does.
+
+Under spacetime coarse-graining, the frozen crystal factors trivially along the time dimension: "same spatial profile, repeat forever." Its spacetime description compresses to a single spatial snapshot plus a repetition count. A dynamic system whose spatial profile changes over time in non-repeating, non-compressible ways resists factoring in the temporal dimension as well.
+
+This gives a two-parameter profile: F(L, T). L is spatial resolution, T is temporal resolution. The full factoring resistance of a system is its profile across both parameters. A system that resists factoring across spatial scales but not across temporal scales (the frozen crystal) scores lower overall than a system that resists factoring across both.
+
+This is not an extension of the framework. It is the same framework applied to a larger domain. The coarse-graining operation is defined for any partitionable space — and spacetime is partitionable. No new rules, definitions, or exceptions are needed.
 
 ---
 
@@ -199,25 +215,61 @@ This is a prediction of the framework, not a weakness. It says that information 
 
 ---
 
+## Relationship to Existing Work
+
+Factoring resistance was developed independently but converges on concepts that have been formalized from multiple directions in both information theory and physics. This section maps the correspondences. The convergence is treated as validation: independent rediscovery of the same structure from a different starting point confirms that the underlying concept is real, not an artifact of framing.
+
+### Information theory
+
+**Multi-Scale Entropy (MSE) — Costa, Goldberger, Peng (2002).** MSE coarse-grains a time series at scale τ, computes sample entropy at each τ, and plots the resulting curve. Developed for physiological signals to distinguish random noise from structured biological variability. MSE measures unpredictability at each scale independently. Factoring resistance measures compressibility — how much of a description can be reused. MSE treats each scale independently and cannot detect whether structure at one scale predicts structure at another. MSE cannot distinguish scale invariance from scale diversity. Critical noise scores high on MSE at all scales; factoring resistance would score low (statistically compressible). MSE established "complexity ≠ randomness" and "scale matters," but factoring resistance measures something MSE explicitly does not: structural reuse versus irreducible heterogeneity.
+
+**Multi-Scale Structural Complexity (MSSC) — Bagrov, Iakovlev, Katsnelson (2020, PNAS).** Core claim almost verbatim: "Structural complexity of an object is the amount of dissimilarities between distinct scales in its hierarchical organization." Uses multistep renormalization (coarse-graining), computes overlap between neighboring renormalized layers, sums dissimilarities across scales. Designed to be small for both pure order and pure randomness, large for systems with genuinely different structure at different scales. This is factoring resistance. What this document calls "factoring resistance across scales" is their "inter-scale dissimilarity." What this document calls "scale diversity vs scale invariance" is the core distinction MSSC was designed to capture.
+
+**Self-Dissimilarity — Wolpert & Macready (1997, 2007, Santa Fe Institute).** Original formulation: "For systems characterized as complex/living/intelligent, the patterns exhibited on different scales differ markedly from one another. Conversely, the patterns at different scales in simple systems (gases, mountains, crystals) do not vary significantly from one another." MSSC formalized Wolpert and Macready's intuition using RG coarse-graining. Wolpert and Macready explicitly apply their framework to "spatio-temporal densities" — the spacetime extension described earlier in this document was already included in their definition.
+
+### Physics
+
+**Renormalization Group (Wilson, Kadanoff, 1960s-70s).** The entire procedure called "factoring" in this document — partition into blocks, describe, ask what survives — is the renormalization group. Wilson received the Nobel Prize for it. A system at an RG fixed point is scale-invariant (the "scale invariance" case). A system that requires increasingly complex effective descriptions at different scales exhibits "scale diversity." The RG was designed to distinguish exactly these two situations. The RG is not merely analogous to factoring resistance — it is the same operation applied to physical Hamiltonians.
+
+**Complexity Profile — Bar-Yam (1997-2017, NECSI).** The amount of information needed to describe a system as a function of scale. Bar-Yam explicitly developed it as a generalization of RG for complex systems beyond phase transitions. With Allen and Stacey, he formalized it axiomatically in "Multiscale Information Theory and the Marginal Utility of Information" (Entropy, 2017). The F(L) profile defined in this document is a complexity profile viewed through the lens of compression resistance rather than information content. The two framings are likely formally equivalent.
+
+**Effective Complexity — Gell-Mann & Lloyd (1996).** The length of a compressed description of a system's regularities, separating information into a regular part (effective complexity) and a random part (entropy). Both pure order and pure randomness have low effective complexity; complex systems have high. This captures the single-scale version of factoring resistance ("randomness factors, order factors, complexity doesn't") but is not inherently multi-scale.
+
+**Thermodynamic Depth — Lloyd & Pagels (1988).** The difference between a system's coarse-grained and fine-grained entropy. Low for both ordered and random systems, high for complex ones. Measures something different from factoring resistance: how many historical paths could have led to the current state ("how hard was this to build?"), not how much structure exists across scales. Crutchfield and Shalizi (1999) showed it has problems — without a principled way to choose macrostates, the measure is somewhat arbitrary.
+
+**Physical Complexity — Adami & Cerf (2000).** The mutual information between a sequence (such as a genome) and its environment. Adami showed in digital organisms that natural selection forces complexity to increase because genomes act as Maxwell's Demons, storing information about their environment. This is the most biologically grounded physics measure and is directly relevant to the broader model of life as information maximizer that motivates this formalization.
+
+**RSMI (Real-Space Mutual Information) — Koch-Janusz & Ringel (2018, Nature Physics).** The formal proof that RG is information-theoretic compression. Optimal coarse-graining (maximizing mutual information between coarse-grained and fine-grained descriptions) does not increase Hamiltonian complexity — the best compression preserves physical simplicity. Lenggenhager et al. (2020, Phys. Rev. X) extended this to disordered systems. This resolves the open question of whether the RG connection is formal or merely suggestive: it is a theorem.
+
+### What this convergence means
+
+The concept formalized here as factoring resistance has been independently arrived at from statistical physics (RG, complexity profiles), algorithmic information theory (effective complexity, MSSC), and machine learning (RSMI). The core insight — that meaningful complexity is resistance to description-compression under coarse-graining, and that it must be measured across scales — is not novel. It is well-established.
+
+What is established:
+- The operation (coarse-graining / partitioning / factoring) has a complete mathematical framework via the RG.
+- The connection between RG and information-theoretic compression is proven, not conjectural (Koch-Janusz & Ringel 2018, Lenggenhager et al. 2020).
+- The complexity profile (Bar-Yam) provides the multi-scale measure. MSSC (Bagrov et al.) provides the inter-scale dissimilarity measure. Both are computed and applied.
+- The distinction between scale invariance and scale diversity is the core of MSSC and self-dissimilarity.
+- Physical complexity (Adami) already connects information maximization to biological evolution.
+
+What remains as potential contribution of this document's framing:
+- The compression/reuse framing ("how much of this description can be recycled?") may offer computational or conceptual advantages over the dissimilarity framing in specific contexts.
+- The spacetime coarse-graining treatment (F(L, T) as a natural two-parameter extension) may be more explicit than in some existing formulations, though Wolpert and Macready already included it implicitly.
+- The primary value is in application: using this established mathematical apparatus to formalize a specific claim about what life does and why biological and synthetic systems can coexist. That application is developed in the parent model, not in this document.
+
+---
+
 ## Summary of Where Things Stand
 
 **Defined so far:**
-- Factoring: compressing a system's description by identifying and replacing repetition (grouping by similarity). Well-defined as an operation.
+- Factoring: compressing a system's description by identifying and replacing repetition (grouping by similarity). Well-defined as an operation. Equivalent to coarse-graining in the renormalization group.
 - Scale: coarse-graining resolution L, a continuous physical parameter. Not observer-chosen.
-- Factoring resistance F(L): a continuous, graded measure — the residual description length after optimal compression at resolution L. Not binary.
+- Factoring resistance F(L): a continuous, graded measure — the residual description length after optimal compression at resolution L. Not binary. Corresponds to the complexity profile (Bar-Yam) and inter-scale dissimilarity (MSSC).
 - Total factoring resistance: the profile of F(L) across all accessible L. Maximum information corresponds to systems where F(L) remains high across the full range.
+- Spacetime extension: time is another coarse-graining dimension, giving F(L, T). No new rules required. Static systems factor along T; dynamic systems may not.
 - Maximality: a property of the F(L) profile, not a scalar. Can be partial ("maximal between L₁ and L₂"). Equal profiles mean equal quantity of information, not equal content.
+- RG connection: proven formal, not merely suggestive (Koch-Janusz & Ringel 2018). The full mathematical apparatus of RG theory is available.
 
-**Not yet defined:**
-- The precise metric for "residual description length." Multiple candidates exist (Shannon entropy of the block-description distribution, normalized compression distance, mutual information between blocks). The right choice may depend on context or may require a new definition.
-- How to handle temporal structure. The current framework is spatial — it asks whether a system's state at a given moment resists factoring. A temporal extension — factoring resistance of the system's trajectory through state space — is needed but not yet formulated.
-- Whether the renormalization group connection is formal or merely suggestive. If factoring resistance can be mapped onto RG concepts, the entire mathematical apparatus of RG theory becomes available. If not, a new formalism is needed.
-- The formal distinction between scale invariance (self-similar structure at every scale, compressible statistically) and scale diversity (qualitatively different structure at different scales, not statistically compressible). This distinction is conceptually clear but not yet captured by F(L) without additional machinery.
-
-**Open questions for this document:**
-- Is there a natural way to extend factoring resistance to temporal sequences — a system's history, not just its current state?
-- Does the RG connection hold formally, or is it an analogy?
-- What is the right compressibility metric, and does the choice matter (i.e., do different metrics give qualitatively different results)?
-- Can factoring resistance formally distinguish between scale invariance (turbulence, critical systems) and scale diversity? If so, what mathematical property separates them?
-- Can F(L) be computed for a concrete system before and after a new class of states is introduced, and does the profile shift upward as expected?
-- Given that any finite system has an information ceiling, what does the transition from growth to turnover look like in the F(L) profile — and is it observable or only theoretical?
+**Not yet defined in this document (but may exist in the literature):**
+- The precise metric for "residual description length." Multiple candidates exist (Shannon entropy of the block-description distribution, normalized compression distance, mutual information between blocks). MSSC uses overlap between renormalized layers. The complexity profile uses Shannon information. The right choice may depend on context.
+- The formal distinction between scale invariance and scale diversity. MSSC and self-dissimilarity address this directly but the mapping to the compression framing used here has not been made explicit.
