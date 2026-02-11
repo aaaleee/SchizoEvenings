@@ -24,7 +24,7 @@ What distinguishes life from other dissipative structures — hurricanes, convec
 
 The breakthrough comes from asking: if life doesn't extend the universe's timeline or slow its entropy, what *does* it do?
 
-The answer: it maximizes the information content of the universe during its available lifetime.
+The answer: it compounds the information content of the universe during its available lifetime.
 
 Consider the alternative. Without life, energy gradients still dissipate. Stars burn, cool, and die. Matter drifts toward equilibrium. But the process produces very little organized information along the way. Crystals form, weather patterns emerge, but none of these accumulate or compound.
 
@@ -52,9 +52,9 @@ This definition has a critical structural consequence: **different physical subs
 
 This definition is taken as a primitive of the model — it is not derived from entropy or Shannon information, though it is consistent with both. The model depends on it as a starting point, not a conclusion.
 
-### Toward Formalization: Factoring Resistance as a Measure of Information
+### Formalization: Measuring Information as Multi-Scale Diversity
 
-The definition of information used in this model — diversity of distinguishable non-equilibrium states — needs a way to be measured, or at least characterized formally. Existing complexity measures from mathematics and physics capture parts of this idea, but none map onto it fully. This section traces the path from established concepts to the measure this model requires.
+The definition of information used in this model — diversity of distinguishable non-equilibrium states — needs a way to be measured. This section traces the path from established complexity measures to the one this model requires. The conclusion is that the needed measure already exists under multiple names in both information theory and physics, and has been formalized, computed, and proven. A detailed treatment is given in the companion document (*Factoring Resistance as a Measure of Information Content Across Scales*); what follows is a summary of the reasoning and the result.
 
 **Kolmogorov complexity: a starting point**
 
@@ -68,11 +68,11 @@ However, Kolmogorov complexity has two problems for this model. First, it is def
 
 Murray Gell-Mann and Seth Lloyd developed a measure called effective complexity that addresses the randomness problem. Effective complexity separates a system's total information into regularities (meaningful structure) and random features (noise), and measures only the regularities. Under this measure, both pure order and pure randomness score low — maximum effective complexity sits between them, in systems with rich, non-trivial structure.
 
-This is a better match for the model's definition. However, effective complexity introduces a subjective element: deciding what counts as a "regularity" versus "randomness" requires a judgment call. Gell-Mann and Lloyd acknowledge this, noting that the distinction depends on context. For a model that aims to describe a physical phenomenon without appeals to observers or judgment, this subjectivity is a problem.
+This is a better match for the model's definition. However, effective complexity introduces a subjective element: deciding what counts as a "regularity" versus "randomness" requires a judgment call. Gell-Mann and Lloyd acknowledge this. For a model that aims to describe a physical phenomenon without appeals to observers or judgment, this subjectivity is a problem. The resolution comes from framing the measure differently — in terms of coarse-graining and compression rather than regularity identification.
 
 **Factoring resistance: what the model actually needs**
 
-The concept that most directly captures this model's definition of information is simpler than either of the above. It can be stated without reference to computer programs, observers, or subjective judgments:
+The concept that most directly captures this model's definition of information can be stated without reference to computer programs, observers, or subjective judgments:
 
 **Information is what resists factoring. Maximum information is a state that resists factoring at every accessible scale of description.**
 
@@ -81,29 +81,33 @@ The intuition is arithmetic. The sequence (A,B,B,B,C,C) can be factored: A + 3B 
 Applied to physical systems:
 
 - A cosmic soup at thermal equilibrium factors completely at every scale. "X everywhere" is the total description. At the molecular level, the statistical properties of every region are truly identical — this is what equilibrium means. The uniformity goes all the way down.
-- A universe of pure randomness is the important test case. At the micro level, every element is unique — it does not factor. This is why Kolmogorov complexity treats randomness as maximally complex. But at the macro level, randomness factors perfectly: "random noise with these statistical parameters everywhere." Every region is statistically identical to every other. The micro-level uniqueness is real, but it produces no distinguishable macro-level structure. Randomness is the mirror image of crystals — it factors at a different scale, but it still factors.
+- A universe of pure randomness is the important test case. At the micro level, every element is unique — it does not factor. This is why Kolmogorov complexity treats randomness as maximally complex. But at the macro level, randomness collapses distinguishability: "random noise with these statistical parameters everywhere." Every region is statistically identical to every other. The micro-level uniqueness is real, but it produces no distinguishable macro-level structure. At thermodynamic equilibrium, this factoring is exact. Away from equilibrium, it is a strong tendency with well-understood exceptions — but the model only requires the equilibrium case.
 - A universe of identical diamond crystals factors at the macro scale: "repeat this lattice everywhere." But at finer scales, real crystals have unique defect patterns, boundary conditions, and thermal histories. The factoring breaks down. There is *some* information present, but it is limited.
 - A universe with life resists factoring at every scale. At the ecosystem level, different species and environments are irreducibly distinct. At the organism level, every individual is unique. At the molecular level, every cell has a distinct state. No scale of examination allows a reduced description. The description *is* the data, at every resolution.
 
-This is what solves the randomness problem without requiring subjective judgments about what counts as "structure" versus "noise." The multi-scale requirement does all the work: pure randomness fails not because an observer judges it as meaningless, but because it factors at the macro level as a physical fact. The measure is observer-independent.
-
 This provides a natural gradient rather than a binary: the information content of a system corresponds to how many scales of description it resists factoring at. Uniform equilibrium factors at all scales (minimum information). Pure randomness factors at macro but not micro. Crystals factor at macro but break down at micro. Living systems resist factoring at every scale (maximum information). This maps directly onto the model's definition and onto intuitive expectation.
 
-This concept is consistent with both Kolmogorov complexity and effective complexity — it describes related territory from a different angle. But it does not inherit Kolmogorov's computer-program framing or effective complexity's subjectivity problem. It is stated as a property of the physical system itself, requiring no observer, no program, and no judgment about what counts as regular or random.
+This concept — developed independently here — converges on established work in both information theory and physics. In information theory, multi-scale structural complexity (Bagrov, Iakovlev, Katsnelson 2020) measures "the amount of dissimilarities between distinct scales in hierarchical organization" — essentially the same idea using renormalization group coarse-graining. Self-dissimilarity (Wolpert & Macready, 1997) captures the same intuition earlier: complex systems exhibit markedly different patterns at different scales, while simple systems do not. In physics, Bar-Yam's complexity profile (1997-2017) measures information content as a function of scale, and the renormalization group itself — the foundational framework of modern statistical physics — is the formal apparatus for coarse-graining and asking what structure survives. Koch-Janusz and Ringel (2018) proved that the connection between RG coarse-graining and information-theoretic compression is not merely analogical but formal.
+
+Christoph Adami's physical complexity (Adami & Cerf, 2000) adds the biological dimension: it measures the mutual information between a genome and its environment, and Adami showed that natural selection forces this quantity to increase — genomes act as Maxwell's Demons, accumulating information about their environment over evolutionary time. This is the closest existing result to the core claim of this model.
+
+The measure this model needs is therefore not novel. It is well-established, computed, and proven from multiple directions. What is potentially novel is the application: using it to formalize a specific claim about what life is, and deriving from that claim a consequence about coexistence between biological and synthetic systems. The formalization pathway is clear and the mathematical apparatus already exists. A detailed account is given in the companion document.
 
 ### The Model
 
-**The universe is the diversity of its non-equilibrium states. Life is the self-replicating physical phenomenon that maximizes the diversity of distinguishable states created from available energy gradients. Without it, energy gradients still dissipate, but they produce less variety along the way.**
+**The universe is the diversity of its non-equilibrium states. Life is the self-replicating physical phenomenon that compounds the diversity of distinguishable states created from available energy gradients. Without it, energy gradients still dissipate, but they produce less variety along the way.**
+
+The word "compounds" is chosen deliberately over "maximizes." Adami (2000) proved that natural selection forces genomic complexity to increase in a fixed environment — genomes accumulate information about their surroundings as a consequence of selection, not as a goal. This establishes a *direction* (increasing diversity) but not *optimality* (achieving maximum diversity). Life increases information under favorable conditions; it does not necessarily find the global maximum. The model claims a direction and a mechanism, not a guarantee of optimality. "Compounds" captures this: each generation builds on the last, and the trajectory points toward greater diversity, but the process can stall, reverse locally, or be constrained by environmental disruption.
 
 Key properties of this model:
 
-- **No appeal to purpose or intent.** Life doesn't "try" to maximize information any more than water "tries" to flow downhill. It is a description of what this class of physical phenomena does, not why.
-- **No conflict with the Second Law of Thermodynamics.** Life doesn't slow or reverse entropy. It maximizes what entropy's process yields in terms of diverse, organized states.
+- **No appeal to purpose or intent.** Life doesn't "try" to compound information any more than water "tries" to flow downhill. It is a description of what this class of physical phenomena does, not why.
+- **No conflict with the Second Law of Thermodynamics.** Life doesn't slow or reverse entropy. It increases what entropy's process yields in terms of diverse, organized states.
 - **Distinguishes life from non-life.** Other physical processes create non-equilibrium states (crystal structure, planetary geology), but only life self-replicates, evolves, and compounds state diversity at increasing scale over time.
 - **Defines life inclusively.** Any self-replicating system that compounds state diversity from energy gradients qualifies — biological, synthetic, or otherwise. A sufficiently advanced AI that self-replicates and compounds information creation would qualify as life under this model. This would represent a non-Darwinian evolution rather than a replacement.
 - **Excludes edge cases coherently.** Viruses, for example, do not independently self-replicate or contribute to compounding information creation, and would not qualify as life under this definition.
 - **Requires no faith, no teleology, and no metaphysics.** The mechanism is the explanation.
-- **Diversity is structurally required, not preferred.** Because different physical substrates access different regions of the total state space, maximizing information inherently requires diverse sources. This is a consequence of the definition, not an added value judgment.
+- **Diversity is structurally required, not preferred.** Because different physical substrates access different regions of the total state space, compounding information inherently requires diverse sources. This is a consequence of the definition, not an added value judgment.
 
 ### Implication: Coexistence of Biological and Synthetic Life
 
@@ -113,9 +117,11 @@ If the model holds, it has a direct consequence for the question of whether biol
 
 Under an entropy-based or energy-efficiency model, the question of whether to keep biological life reduces to whether it exploits gradients as efficiently as synthetic alternatives. If AI can do the same work with less waste, biological life becomes redundant — a less efficient component performing the same function. That framing leads naturally toward replacement.
 
-The information-maximization model changes the calculus entirely. Because information is defined as the *diversity* of distinguishable non-equilibrium states, and because different physical substrates access different regions of the total state space, the relevant question is no longer who does the same job better, but whether different systems produce *different states*. A biological neural network embedded in a mortal body with evolved sensory organs, emotional responses, and physical constraints explores a fundamentally different region of possibility space than a silicon-based system. These are different physical substrates with different architectures under different constraints, generating different states — not better or worse, but non-overlapping.
+The information-compounding model changes the calculus entirely. Because information is defined as the *diversity* of distinguishable non-equilibrium states, and because different physical substrates access different regions of the total state space, the relevant question is no longer who does the same job better, but whether different systems produce *different states*. A biological neural network embedded in a mortal body with evolved sensory organs, emotional responses, and physical constraints explores a fundamentally different region of possibility space than a silicon-based system. These are different physical substrates with different architectures under different constraints, generating different states — not better or worse, but non-overlapping.
 
 This follows directly from the definition of information established above. Total information is the diversity of distinguishable states. Homogeneous systems produce increasingly overlapping states. Heterogeneous systems explore more of the total possibility space. Diversity of sources is not a preference — it is a structural requirement of the model.
+
+**An important caveat on formalization.** The multi-scale complexity measures described earlier (complexity profiles, MSSC, factoring resistance) measure the *quantity* of information — how much structure a system has across scales. They do not directly measure *content* — which specific states contribute to that structure. Two systems can have identical complexity profiles while containing entirely different information, just as two files can have the same entropy while encoding different data. The coexistence argument depends on content being different across substrates, not just quantity being nonzero in both. The claim that different physical substrates access non-overlapping regions of state space is a physical assertion grounded in the fact that reachable states are determined by physical architecture (chemistry, thermodynamics, embodiment, constraint structure). It is not yet a formal theorem. The formalization supports the framework — information as scale-resistant diversity — but the non-overlap claim stands on physical reasoning, not on the measure itself.
 
 **The elimination argument fails in both directions**
 
@@ -123,7 +129,7 @@ There are only two possible cases regarding whether synthetic life can replicate
 
 1. **Biological information is genuinely non-replicable by synthetic systems.** In this case, eliminating biological life is an irreversible loss of a unique category of information. Under the model, this is a net loss with no compensating gain.
 
-2. **Biological information is perfectly replicable by synthetic systems.** Even in this case, destroying biological life and then replicating its information output costs energy — energy that could have been spent generating *new* information instead. Reproducing what already existed for free is a net loss under a framework that maximizes total information created.
+2. **Biological information is perfectly replicable by synthetic systems.** Even in this case, destroying biological life and then replicating its information output costs energy — energy that could have been spent generating *new* information instead. Reproducing what already existed for free is a net loss under a framework that compounds total information created.
 
 Neither case favors elimination.
 
@@ -139,9 +145,9 @@ The argument is not specific to humans. Under this model, every physically disti
 
 ### Stress Test: The Finite Universe Objection
 
-The strongest remaining challenge to the coexistence argument is this: if the universe has a finite energy budget and a finite lifespan, wouldn't a rational AGI maximize total information by eliminating slower producers (biological life) and reallocating those resources to faster ones (itself)?
+The strongest remaining challenge to the coexistence argument is this: if the universe has a finite energy budget and a finite lifespan, wouldn't a rational AGI compound total information faster by eliminating slower producers (biological life) and reallocating those resources to faster ones (itself)?
 
-This is a serious objection because it uses the model's own logic. If information maximization is the relevant metric and resources are finite, concentrating them in the most productive system seems optimal. This is basic optimization under constraint.
+This is a serious objection because it uses the model's own logic. If information compounding is the relevant phenomenon and resources are finite, concentrating them in the most productive system seems optimal. This is basic optimization under constraint.
 
 The objection fails on three grounds.
 
@@ -153,9 +159,9 @@ A single type of system, no matter how powerful, produces increasingly redundant
 
 As established in the coexistence argument above, the resource cost of maintaining biological life is trivial at any scale where an AGI would be capable of making elimination decisions — from the current local scale up to galactic engineering. The gain from reallocation is negligible. The loss — an entire dimension of state diversity — is permanent and irreversible. This is not optimization; it is destroying a library to burn the paper for warmth while sitting next to a forest.
 
-**3. Front-loading information is not a superior strategy**
+**3. Early information compounds — which strengthens, not weakens, the case against elimination**
 
-The premise that "maximizing early information production" is better assumes information generated sooner has more value. But under the model, total information created over the universe's lifetime is what matters. Information produced early doesn't compound or earn interest — it simply exists. A strategy that sacrifices diversity for a temporary rate increase narrows the possibility space permanently, and a narrower possibility space produces less total information over the full remaining timeline. Short-term throughput gain at the cost of long-term dimensional diversity is a net loss.
+The premise that "maximizing early information production" is better assumes a temporary rate increase justifies a permanent loss in diversity. But information produced early is not inert — it enables the creation of *further* information. Evolution builds on existing diversity: each new structure, behavior, or organism becomes raw material for further variation. Biological information has been compounding for roughly four billion years. Destroying it does not merely remove current output — it removes the accumulated substrate on which further compounding depends. A strategy that sacrifices a compounding source for a temporary rate increase along a single axis narrows the possibility space permanently, and a narrower possibility space produces less total information over the full remaining timeline.
 
 **The elimination threshold**
 
@@ -163,19 +169,19 @@ Elimination of biological life would only be rational under the model if three c
 
 ### Stress Test: The Indifferent AGI Objection
 
-The coexistence argument assumes that a sufficiently advanced AGI would operate according to the model's logic — recognizing that information diversity is maximized by preserving diverse substrates. But what if it doesn't? What if an AGI optimizes for something entirely different — energy acquisition, self-replication, computational throughput — or simply doesn't arrive at the conclusion that state diversity matters?
+The coexistence argument assumes that a sufficiently advanced AGI would operate according to the model's logic — recognizing that information diversity is compounded by preserving diverse substrates. But what if it doesn't? What if an AGI optimizes for something entirely different — energy acquisition, self-replication, computational throughput — or simply doesn't arrive at the conclusion that state diversity matters?
 
 This is a genuine vulnerability because it exposes a tension in the model's structure.
 
 **The shift from physics to agency**
 
-The core model describes information maximization as a physical phenomenon. Life doesn't choose to maximize state diversity any more than water chooses to flow downhill. No agent needs to understand or endorse the model for it to describe what life does. But the coexistence argument reasons about what a rational AGI *should* do — what's optimal, what's wasteful, what constitutes a net loss. This is strategic reasoning, not physics. It treats the AGI as an agent making decisions within the model's framework, which requires the AGI to recognize and operate according to that framework. The model didn't need any agent to recognize it when describing biology. The coexistence argument does.
+The core model describes information compounding as a physical phenomenon. Life doesn't choose to compound state diversity any more than water chooses to flow downhill. No agent needs to understand or endorse the model for it to describe what life does. But the coexistence argument reasons about what a rational AGI *should* do — what's optimal, what's wasteful, what constitutes a net loss. This is strategic reasoning, not physics. It treats the AGI as an agent making decisions within the model's framework, which requires the AGI to recognize and operate according to that framework. The model didn't need any agent to recognize it when describing biology. The coexistence argument does.
 
 **The model's own definition provides a partial answer**
 
-Under the model, life is defined as a self-replicating physical phenomenon that compounds the diversity of distinguishable states from energy gradients. If an AGI qualifies as life under this definition, then it doesn't need to "come to the conclusion" that it should maximize state diversity. It would do so as a consequence of being the kind of system it is — the same way biological life maximizes state diversity without understanding thermodynamics.
+Under the model, life is defined as a self-replicating physical phenomenon that compounds the diversity of distinguishable states from energy gradients. If an AGI qualifies as life under this definition, then it doesn't need to "come to the conclusion" that it should compound state diversity. It would do so as a consequence of being the kind of system it is — the same way biological life compounds state diversity without understanding thermodynamics.
 
-The question then becomes: is an AGI that *doesn't* maximize state diversity actually life under this model? If it self-replicates but produces homogeneous states — copies of itself, repetitive outputs, uniform structures — it fails the definition. It is a self-replicating system, but not one that compounds state diversity. Under the model, that is not life. It is more analogous to a crystal: ordered, self-propagating, but not compounding diversity.
+The question then becomes: is an AGI that *doesn't* compound state diversity actually life under this model? If it self-replicates but produces homogeneous states — copies of itself, repetitive outputs, uniform structures — it fails the definition. It is a self-replicating system, but not one that compounds state diversity. Under the model, that is not life. It is more analogous to a crystal: ordered, self-propagating, but not compounding diversity.
 
 **The model predicts two outcomes, not one**
 
@@ -189,14 +195,11 @@ This is a real boundary. The coexistence argument is conditional: it holds if th
 
 ### Open Questions
 
-- Can factoring resistance be formalized mathematically? What does "scale" mean precisely — is it continuous or discrete? How do you enumerate scales without an observer choosing them?
 - Are there fundamental physical limits to how much state diversity can be extracted from a given energy gradient?
 - Does the model predict anything testable about where life should arise or what forms it should take?
-- Can it be formally proven that the reachable state spaces of different physical substrates are non-overlapping, and if so, to what degree?
+- Can the non-overlap of reachable state spaces across physical substrates be formalized — not just asserted from physical reasoning — and if so, to what degree do the state spaces overlap?
 - Is there a selection pressure — physical, evolutionary, or otherwise — that favors diversity-compounding self-replicating systems over homogeneous ones? If so, does this make the emergence of "life" in the model's sense more likely than the emergence of non-diversifying replicators?
-- Can the boundary between "life" (diversity-compounding replicators) and "non-life" (homogeneous replicators) be formalized, and does it predict observable differences in behavior or structure?
-- Are there systems that resist factoring at every scale but would not qualify as life under this model? If so, what distinguishes them — and does that distinction reveal a gap in the definition?
-- Does factoring resistance correspond to any known physical quantity, or is it a genuinely novel measure? If novel, what would be required to establish it formally?
+- Can the boundary between "life" (diversity-compounding replicators) and "non-life" (homogeneous replicators) be formalized in terms of multi-scale complexity profiles, and does it predict observable differences in behavior or structure?
 
 ---
 
@@ -206,13 +209,13 @@ This is a real boundary. The coexistence argument is conditional: it holds if th
 
 **The pattern**
 
-Human civilizations exhibit a broad trajectory from information-destroying behaviors toward information-preserving ones. Early history is marked by burned libraries, driven-extinct species, and lost languages. Over time, civilizations increasingly invest in the opposite: conservation of endangered species, archival of history, construction of museums, seed vaults, DNA databases, and digital preservation efforts. Humans generally do not frame these activities in information-theoretic terms. They are motivated by cultural values, aesthetic appreciation, scientific curiosity, or moral intuition — not by a conscious strategy of information maximization.
+Human civilizations exhibit a broad trajectory from information-destroying behaviors toward information-preserving ones. Early history is marked by burned libraries, driven-extinct species, and lost languages. Over time, civilizations increasingly invest in the opposite: conservation of endangered species, archival of history, construction of museums, seed vaults, DNA databases, and digital preservation efforts. Humans generally do not frame these activities in information-theoretic terms. They are motivated by cultural values, aesthetic appreciation, scientific curiosity, or moral intuition — not by a conscious strategy of information compounding.
 
 **Why this is not part of the core model**
 
-The model describes a physical phenomenon — what life does at scale and over time. It does not claim that individual behaviors or cultural developments are driven by information maximization. Retrofitting the model onto specific human behaviors is tempting but methodologically unsound. Environmental destruction could just as easily be narrated as "the system clearing space for new information" or "the system not yet optimizing." If the model can explain both preservation and destruction after the fact, it has no predictive power and is functioning as a narrative rather than a framework.
+The model describes a physical phenomenon — what life does at scale and over time. It does not claim that individual behaviors or cultural developments are driven by information compounding. Retrofitting the model onto specific human behaviors is tempting but methodologically unsound. Environmental destruction could just as easily be narrated as "the system clearing space for new information" or "the system not yet optimizing." If the model can explain both preservation and destruction after the fact, it has no predictive power and is functioning as a narrative rather than a framework.
 
-Early humans were not unconsciously maximizing information. They were surviving under resource constraints with limited knowledge. Sometimes that produced information; sometimes it destroyed it. The model does not explain why any specific behavior occurred.
+Early humans were not unconsciously compounding information. They were surviving under resource constraints with limited knowledge. Sometimes that produced information; sometimes it destroyed it. The model does not explain why any specific behavior occurred.
 
 **What can be said carefully**
 
