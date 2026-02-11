@@ -1,6 +1,6 @@
 # Factoring Resistance: Toward a Formal Measure of Information Content
 
-*Working document. This explores the formalization of a concept introduced in "Life as Information Maximizer" — the idea that information is what resists factoring, and that maximum information is a state that resists factoring at every scale. The parent document uses factoring resistance as a primitive. This document attempts to make it rigorous.*
+*Working document. This explores the formalization of "factoring resistance" — the idea that information is what resists factoring, and that maximum information is a state that resists factoring at every scale. This document attempts to make that concept rigorous.*
 
 ---
 
@@ -44,11 +44,19 @@ More precisely:
 
 If yes, the system factors under that partition. If no partition at that resolution allows compression, the system resists factoring at that scale.
 
+But compression is not binary. Almost no physical system will cleanly "factor" or "not factor" — there are degrees. A description might be reducible by 90%, or by 5%, or by 0.01%. If factoring resistance is treated as binary — either it factors or it doesn't — then the concept becomes brittle. A threshold would be needed, and that threshold would be an arbitrary choice.
+
+The correct commitment is: **F(L) is a continuous, graded measure.** At each scale L, factoring resistance is the residual description length after optimal compression — how much of the description survives once all repetition has been removed. A crystal at the macro level has near-zero residual. A random system at the macro level also has near-zero residual (its statistics compress to a few parameters). A system with genuinely diverse structure resists compression, leaving a high residual.
+
+This means F(L) is not a predicate ("factors" vs "doesn't factor") but a quantity. Systems can be compared. Factoring resistance can increase or decrease. The concept survives contact with real systems where nothing is perfectly compressible or perfectly incompressible.
+
+This does not discard the binary concept — it subsumes it. F(L) ranges from zero (fully compressible) to a maximum (nothing compresses). If a system hits that maximum at a given L — every region's description is irreducibly unique, no compression is possible — then it is fully resistant at that scale. That is a binary fact. Full resistance is the upper bound of the continuous measure, not a separate concept.
+
 This is not a free-form algebra. The allowed operation is specifically: grouping and compressing by similarity. This is well-defined and does not depend on an observer's preferences — two descriptions either are or are not statistically distinguishable, as a matter of physical fact.
 
 ### What counts as "identical" or "indistinguishable"?
 
-Two region-descriptions are identical if they specify the same physical state. They are statistically indistinguishable if no measurement at the given resolution could reliably distinguish them. This is an operational definition grounded in physics, not in observer choice — it corresponds to asking whether two regions would produce different outcomes in a physical experiment at the relevant resolution.
+Two region-descriptions are identical if they specify the same physical state. They are statistically indistinguishable if no measurement at the given resolution could reliably distinguish them. This is an operational definition grounded in physics, not in observer choice — it corresponds to asking whether two regions would produce different outcomes in a physical experiment at the relevant resolution. Because F(L) is defined in terms of the complete description at resolution L — everything the physics contains at that scale, not a chosen subset of observables — there is no menu of measurements to select from. The only parameter is L itself, which is a continuous physical quantity, not an observer decision.
 
 ---
 
@@ -89,13 +97,20 @@ This is suggestive. In the language of factoring resistance:
 - A system far from criticality factors at most scales (it has a characteristic length scale, and beyond that scale, it is uniform).
 - A system at a critical point resists factoring at every scale (structure is present at all resolutions).
 
-The parallel to the parent model is tempting but must be stated carefully.
+This parallel must be stated carefully.
 
-This is suggestive, but the analogy requires care. The parent model does not claim that life itself is a system that resists factoring at every scale. A single organism might be highly structured and even somewhat factorable at certain resolutions. The claim is different: **life is the self-replicating phenomenon whose outputs increase the universe's total factoring resistance.** Life adds states to the universe that could not be produced by non-living processes exploiting the same energy gradients — states that make the total description of the universe less compressible.
+**Scale invariance is not scale diversity.** A critical system — like a fluid at its boiling point or a magnet at its Curie temperature — resists simplification across scales. But it is often statistically self-similar: the same kind of structure repeats at every resolution. A critical Ising model has fluctuations at every scale, but those fluctuations are governed by the same statistical law everywhere. Under the graded definition of F(L), such a system might still have relatively low factoring resistance, because the description at each scale can be compressed to: "same statistical law, different realization." The structure persists, but it factors statistically.
 
-Under the RG analogy, the question is not whether a living system is at criticality, but whether the universe *with* life in it has a higher factoring resistance profile than the universe without it. Life would be the process that pushes the universe's F(L) profile upward across scales — not by being complex itself, but by producing diverse, non-redundant states that resist compression when added to the total description.
+The distinction that matters for factoring resistance is between:
 
-The formal tools of the renormalization group (RG flow, fixed points, scaling exponents) might still provide a useful mathematical framework for computing how a system's factoring resistance profile changes when a new class of states is introduced. This is a candidate formalization pathway, not a claimed result.
+- **Scale invariance:** non-trivial structure at every scale, but self-similar (same type of structure repeated). May still compress statistically.
+- **Scale diversity:** genuinely different kinds of structure at different scales, where the description at one scale does not predict the description at another.
+
+Maximum factoring resistance requires scale diversity, not merely scale invariance. A turbulent fluid or a critical system resists coarse-graining, but if its structure at every scale is governed by the same statistical law, its cross-scale description still compresses. A system with qualitatively different organization at different scales — where molecular-level structure is unlike macro-level structure, which is unlike large-scale structure — resists this compression.
+
+This distinction is present in the concept but not yet formalized. A critic armed with turbulence, strange attractors, or critical systems can legitimately demand: "Show me why these score lower on F(L) than a scale-diverse system." The answer must come from the graded measure, not from hand-waving about what "feels" more complex.
+
+The formal tools of the renormalization group (RG flow, fixed points, scaling exponents) might provide a useful mathematical framework for defining and computing factoring resistance. This is a candidate formalization pathway, not a claimed result.
 
 ---
 
@@ -109,7 +124,7 @@ To test whether factoring resistance is a real, measurable property rather than 
 
 **The Living City.** Districts are distinct from each other — a financial district, a market quarter, a residential area, an arts district. Zoom into a district — blocks differ from each other. Zoom into a block — buildings differ. Zoom into a building — rooms differ. At every zoom level, you are seeing something you could not have predicted from any other part of the city. No zoom level gives you a shortcut. This city resists factoring at every scale. F(L) remains high across the full range of zoom levels.
 
-The parallel to the parent model's three cases is direct. The Uniform City is the crystal universe — compressible at every scale. The Random City is the cosmic soup — micro-level diversity but macro-level sameness. The Living City is a universe with life's contributions — irreducible structure at every resolution.
+The parallel to the three canonical cases is direct. The Uniform City is the crystal — compressible at every scale. The Random City is the uniform noise — micro-level diversity but macro-level sameness. The Living City is the scale-diverse system — irreducible structure at every resolution.
 
 **What "computing F(L)" would mean here:**
 
@@ -128,7 +143,7 @@ This is measurable. It is not the final formalization — real physical systems 
 
 ## The Randomness Claim, Revisited
 
-The parent document states that randomness "factors perfectly at the macro level." This is a useful intuition but slightly too strong.
+The earlier sections of this document state that randomness "factors perfectly at the macro level." This is a useful intuition but slightly too strong.
 
 The more defensible claim is: **randomness collapses macro-level distinguishability, even when micro-level states differ.**
 
@@ -143,22 +158,66 @@ For the purposes of the model, the relevant claim is narrower and more defensibl
 
 ---
 
+## What "Maximum Information" Means
+
+Once F(L) is defined as a graded, continuous function of scale, "maximum information" needs to be stated precisely — and the answer is less obvious than it first appears.
+
+### Maximality is a profile, not a number
+
+The natural instinct is to treat total information as a scalar — sum or integrate F(L) across all scales and get a single number. But this loses most of what F(L) captures. Two systems with the same integrated F could have radically different profiles: one might have high factoring resistance concentrated at fine scales (like randomness), another might have it concentrated at coarse scales, and a third might have moderate resistance spread across all scales.
+
+The more precise statement: **maximum information corresponds to a system whose F(L) profile remains high across the full accessible range of L.** Information is not a volume — it is coverage of scale space. A system is maximally informative not when it scores highest on a single number, but when it resists factoring broadly, at many scales simultaneously.
+
+This means maximality can be partial and localized. A system can be "maximal between L₁ and L₂" — meaning its factoring resistance is saturated over that range of scales but not others. This is more precise, more physical, and more useful than a single scalar.
+
+### Equal quantity is not equal content
+
+A consequence: two systems can have the same F(L) profile — the same quantity of information — while containing entirely different information. This is not a flaw. Physics already works this way. Two systems can have the same entropy but radically different microstates. Two signals can have the same Shannon entropy but encode entirely different messages.
+
+Under this framework:
+
+- **Quantity of information** = the F(L) profile (how much factoring resistance, distributed across which scales).
+- **Content of information** = which specific states are present (what the irreducible descriptions actually say).
+
+Two maximally informative systems are informationally equal in quantity but potentially non-overlapping in content.
+
+### Comparison and ranking
+
+If maximality is a profile rather than a scalar, then ranking systems requires care. Two systems that are both maximal across the same range of L cannot be ranked — they are informationally equivalent in quantity, differing only in content. Ranking only makes sense when comparing systems with different profiles: one that is maximal across more of the scale range contains more information than one that is maximal across less.
+
+This is not a weakness — it is a design choice that reflects the structure of the concept. Attempting to force a total ordering where the concept supports only a partial ordering would be false precision.
+
+### Saturation is inevitable
+
+If information is coverage of scale space, there is a ceiling. The universe has finite energy, which means finite degrees of freedom, which means a finite number of distinguishable states. The F(L) profile cannot grow indefinitely — there is a physical maximum set by the energy budget of the system.
+
+This is not speculative. It is a direct consequence of thermodynamics and is formalized in physics as the Bekenstein bound, which puts a hard upper limit on the information content of any finite region with finite energy.
+
+The consequence for any system approaching saturation: once the F(L) profile is maximal across all accessible scales, no further increase is possible — only substitution. New states can replace existing ones, but the total quantity of information cannot grow. The system transitions from *increasing* its information to *diversifying within the ceiling* — replacing content, turning over configurations, exploring different states within the same total capacity.
+
+This is a prediction of the framework, not a weakness. It says that information growth in any finite system has a physical endpoint, and that beyond that point, change continues but growth does not. Whether this transition is observable on any practical timescale is a separate question — but the ceiling itself is a fact of physics.
+
+---
+
 ## Summary of Where Things Stand
 
 **Defined so far:**
 - Factoring: compressing a system's description by identifying and replacing repetition (grouping by similarity). Well-defined as an operation.
 - Scale: coarse-graining resolution L, a continuous physical parameter. Not observer-chosen.
-- Factoring resistance F(L): whether the system's description at resolution L can be compressed. Measurable in principle.
+- Factoring resistance F(L): a continuous, graded measure — the residual description length after optimal compression at resolution L. Not binary.
 - Total factoring resistance: the profile of F(L) across all accessible L. Maximum information corresponds to systems where F(L) remains high across the full range.
+- Maximality: a property of the F(L) profile, not a scalar. Can be partial ("maximal between L₁ and L₂"). Equal profiles mean equal quantity of information, not equal content.
 
 **Not yet defined:**
-- The precise metric for "compressibility of a set of block-descriptions." Multiple candidates exist (Shannon entropy of the distribution, normalized compression distance, mutual information between blocks). The right choice may depend on context or may require a new definition.
-- How to handle temporal structure. The current framework is spatial — it asks whether a system's state at a given moment resists factoring. But the parent model is about what life *produces over time*. A temporal extension — factoring resistance of the system's trajectory through state space — is needed but not yet formulated.
+- The precise metric for "residual description length." Multiple candidates exist (Shannon entropy of the block-description distribution, normalized compression distance, mutual information between blocks). The right choice may depend on context or may require a new definition.
+- How to handle temporal structure. The current framework is spatial — it asks whether a system's state at a given moment resists factoring. A temporal extension — factoring resistance of the system's trajectory through state space — is needed but not yet formulated.
 - Whether the renormalization group connection is formal or merely suggestive. If factoring resistance can be mapped onto RG concepts, the entire mathematical apparatus of RG theory becomes available. If not, a new formalism is needed.
+- The formal distinction between scale invariance (self-similar structure at every scale, compressible statistically) and scale diversity (qualitatively different structure at different scales, not statistically compressible). This distinction is conceptually clear but not yet captured by F(L) without additional machinery.
 
 **Open questions for this document:**
-- Is there a natural way to extend factoring resistance to temporal sequences — the system's history, not just its current state?
+- Is there a natural way to extend factoring resistance to temporal sequences — a system's history, not just its current state?
 - Does the RG connection hold formally, or is it an analogy?
 - What is the right compressibility metric, and does the choice matter (i.e., do different metrics give qualitatively different results)?
-- Can factoring resistance distinguish between systems that a physicist would intuitively call "alive" versus "complex but not alive" — for instance, a turbulent fluid versus an ecosystem? Both have multi-scale structure. What, if anything, makes them different under this measure?
-- The parent model claims life increases the universe's factoring resistance. Can F(L) be computed for a system before and after a life-like process is introduced, and does the profile shift upward as predicted?
+- Can factoring resistance formally distinguish between scale invariance (turbulence, critical systems) and scale diversity? If so, what mathematical property separates them?
+- Can F(L) be computed for a concrete system before and after a new class of states is introduced, and does the profile shift upward as expected?
+- Given that any finite system has an information ceiling, what does the transition from growth to turnover look like in the F(L) profile — and is it observable or only theoretical?
