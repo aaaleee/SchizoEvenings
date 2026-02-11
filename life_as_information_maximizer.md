@@ -1,4 +1,4 @@
-# Life as Information Maximizer
+# Life as Information Compounder
 
 ## A Physics-Grounded Model of What Life Is
 
@@ -66,7 +66,6 @@ This gives a natural gradient: information content is the range of scales over w
 
 - In information theory, multi-scale structural complexity (Bagrov, Iakovlev, Katsnelson 2020) measures dissimilarity between scales in hierarchical organization using renormalization group coarse-graining. Self-dissimilarity (Wolpert & Macready, 1997) captures the same intuition: complex systems exhibit markedly different patterns at different scales.
 - In physics, Bar-Yam's complexity profile (1997–2017, formalized with Allen & Stacey in *Entropy*, 2017) measures information content as a function of scale. The renormalization group itself is the formal apparatus for coarse-graining and tracking what structure survives. Koch-Janusz and Ringel (2018, *Nature Physics*) proved that the connection between RG coarse-graining and information-theoretic compression is formal, not merely analogical.
-- In biology, there is precedent for formalizing biological complexity as information acquired about an environment via selection. Adami and Cerf (2000) define physical complexity for symbolic sequences as roughly the mutual information between the sequence and its environment — how much information about the environment is encoded in the genome — and show that selection can increase this quantity under certain conditions. This is consistent with, though not a proof of, this model's direction-of-change claim. The direction is plausible; a universal guarantee is not. Changing environments, genetic drift, population bottlenecks, and other factors can reduce genomic complexity. What Adami establishes is that selection *tends to accumulate* environmental information in genomes, not that life universally increases total information.
 
 The measure this model needs is therefore not novel. What is potentially novel is the application: using established multi-scale complexity measures to formalize a specific claim about what life is, and deriving from that claim a consequence about coexistence between biological and synthetic systems.
 
@@ -74,17 +73,37 @@ The measure this model needs is therefore not novel. What is potentially novel i
 
 **The universe is the diversity of its non-equilibrium states. Life is the self-replicating physical phenomenon that compounds the diversity of distinguishable states created from available energy gradients. Without it, energy gradients still dissipate, but they produce less variety along the way.**
 
-The word "compounds" is chosen deliberately over "maximizes." There is precedent for the weaker claim: Adami and Cerf (2000) showed that natural selection tends to increase the mutual information between genomes and their environments under stable conditions — genomes accumulate information about their surroundings as a consequence of selection, not as a goal. This establishes a *direction* (increasing diversity) but not *optimality* (achieving maximum diversity), and even the direction is not guaranteed under all conditions (environmental disruption, drift, and bottlenecks can reverse it). The model claims a direction and a mechanism, not a guarantee of optimality. "Compounds" captures this: each generation builds on the last, and the trajectory points toward greater diversity, but the process can stall, reverse locally, or be constrained.
+This is a definition — a way of drawing a boundary around a class of physical phenomena. It is not a hypothesis about mechanism. It says what life *does*, not why or how.
 
-Key properties of this model:
+Key properties:
 
 - **No appeal to purpose or intent.** Life doesn't "try" to compound information any more than water "tries" to flow downhill. It is a description of what this class of physical phenomena does, not why.
 - **No conflict with the Second Law of Thermodynamics.** Life doesn't slow or reverse entropy. It increases what entropy's process yields in terms of diverse, organized states.
 - **Distinguishes life from non-life.** Other physical processes create non-equilibrium states (crystal structure, planetary geology), but only life self-replicates, evolves, and compounds state diversity at increasing scale over time.
 - **Defines life inclusively.** Any self-replicating system that compounds state diversity from energy gradients qualifies — biological, synthetic, or otherwise. A sufficiently advanced AI that self-replicates and compounds information creation would qualify as life under this model. This would represent a non-Darwinian evolution rather than a replacement.
 - **Draws a boundary, with acknowledged borderline cases.** This model draws the boundary around autonomous diversity-compounding replicators. Classification of borderline cases — viruses, prions, transposable elements — depends on where autonomy and compounding are drawn and is not central to the model's core claims.
-- **Requires no faith, no teleology, and no metaphysics.** The mechanism is the explanation.
+- **Requires no faith, no teleology, and no metaphysics.** The definition describes what life does. The mechanism section addresses why.
 - **Diversity is structurally required, not preferred.** Because different physical substrates access different regions of the total state space, compounding information inherently requires diverse sources. This is a consequence of the definition, not an added value judgment.
+
+### The Observation
+
+The definition is only useful if it maps onto reality. It does.
+
+Earth without life would have some state diversity — geological formations, weather patterns, mineral deposits, ocean chemistry. These are real non-equilibrium states. But they do not self-replicate, do not compound, and their diversity is limited by the number of distinct physical and chemical processes available.
+
+Earth with life has incomparably more. A single hectare of tropical rainforest contains thousands of species, millions of individual organisms, and trillions of cells — each in a distinct molecular state. The diversity extends across every scale: ecosystems differ from each other, species differ within ecosystems, individuals differ within species, cells differ within individuals, proteins differ within cells. No coarse-graining collapses this. And critically, this diversity has been *compounding* for roughly four billion years — each generation building on the accumulated variation of the last, producing new structures, new behaviors, new biochemistries that did not exist before and could not have been predicted.
+
+This is not a theoretical claim. It is an observation. Life, as it actually exists on Earth, fits the definition: it is the self-replicating phenomenon that has compounded state diversity from energy gradients at every scale, over deep time, producing the overwhelming majority of the distinguishable non-equilibrium states that exist on this planet.
+
+### Why Does Life Do This? (Mechanism)
+
+The definition says life compounds state diversity. The observation confirms it does. The question of *why* — what mechanism drives this — is separate, and genuinely harder.
+
+The strongest existing account comes from Adami and Cerf (2000), who define physical complexity for symbolic sequences as roughly the mutual information between a genome and its environment — how much information about the environment is encoded in the sequence. They showed that natural selection tends to increase this quantity: genomes accumulate information about their surroundings as a consequence of selection, acting as Maxwell's Demons that store environmental regularities. This provides a concrete mechanism for one pathway by which life compounds information.
+
+The appropriate hedges belong here, not on the definition or observation. Adami's result shows a *tendency* under *favorable conditions* — stable environments, sufficient population sizes, adequate time. It is not a universal monotone. Changing environments, genetic drift, population bottlenecks, and high mutation rates can all reduce genomic complexity. The direction is well-supported; the guarantee is not. This is consistent with, though not a proof of, the model's claim that life compounds information. Other mechanisms beyond genomic selection likely contribute — behavioral diversity, ecological interaction, cultural accumulation — but these are less formally characterized.
+
+The important structural point is this: **the coexistence argument that follows does not depend on the mechanism.** It follows from the definition and the observation. If life compounds state diversity — which it observably does — and if different physical substrates access different regions of state space — which follows from the definition of "different substrates" — then the coexistence logic holds regardless of *why* life compounds information. The mechanism explains the phenomenon. The coexistence argument follows from its existence.
 
 ### Implication: Coexistence of Biological and Synthetic Life
 
