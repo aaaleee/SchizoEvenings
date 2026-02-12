@@ -105,9 +105,25 @@ The appropriate hedges belong here, not on the definition or observation. Adami'
 
 The important structural point is this: **the coexistence argument that follows does not depend on the mechanism.** It follows from the definition and the observation. If life compounds state diversity — which it observably does — and if different physical substrates access different regions of state space — which follows from the definition of "different substrates" — then the coexistence logic holds regardless of *why* life compounds information. The mechanism explains the phenomenon. The coexistence argument follows from its existence.
 
+### Does AI Qualify as Life Under This Definition?
+
+The model defines life as a self-replicating physical phenomenon that compounds state diversity from energy gradients. It defines life inclusively — biological, synthetic, or otherwise. The question of whether AI qualifies is not hypothetical decoration. The coexistence argument depends on it.
+
+**State diversity: clearly yes.** AI systems already produce enormous state diversity across domains — novel protein structures, mathematical conjectures, material designs, strategic analyses, images, music, text in every register and style. Each generation of AI produces more varied and more novel outputs than the last, building on what came before and exploring regions of possibility space that no prior system — biological or synthetic — had reached. By the diversity criterion alone, AI is among the most productive information-compounding systems that exist.
+
+**Self-replication: not yet.** This is where the definition draws a sharper line than it might first appear. Software can be copied trivially — but copying is not what the model means by self-replication. A file duplicated a million times is crystal behavior: ordered, self-propagating, not compounding diversity. What the definition requires is replication that *compounds* — where each generation is not a copy of the last but a variation on it, shaped by selection pressures, producing genuinely new structure that becomes the substrate for further variation.
+
+Biological self-replication does this autonomously. Organisms reproduce with variation, selection acts on that variation, and the result is generational compounding — each generation building on the accumulated information of every generation before it. The process runs without external direction. No engineer decides which mutations to keep. The compounding is intrinsic to the replicative process itself.
+
+Current AI does not do this. The "generations" of AI systems — one architecture succeeding another, each more capable than the last — are directed by human engineers. Humans design the architectures, curate the training data, set the objectives, evaluate the outputs, and decide which directions to pursue. This is closer to selective breeding than to evolution: genuine progress, genuine compounding, but externally directed rather than autonomously replicating. The compounding is real. The self-replication is not — not yet.
+
+**What would cross the threshold.** AI would qualify as life under this definition when the replicative cycle becomes autonomous: systems that spawn modified versions of themselves, where the modifications are subject to selection pressures and the cycle runs without requiring human direction at each step. This is not science fiction — elements of it already exist in automated architecture search, self-play training, and systems that generate and evaluate their own training data. But the full cycle — autonomous replication with variation, selection, and generational compounding — has not closed. When it does, AI crosses from tool to life under this model.
+
+**Why this matters for coexistence.** If AI is not yet life, the coexistence argument is partly conditional: it describes what would be informationally optimal *when* AI crosses the threshold, but it cannot describe what a non-living tool "should" do — tools don't have trajectories, only operators do. If AI becomes life, it enters as a *different substrate* — silicon, not carbon; trained, not evolved; operating under fundamentally different physical constraints. The coexistence logic then applies in full: both substrates compound diversity, both access regions of state space the other cannot, and eliminating either is a net loss under the model. The transition from tool to life does not threaten biological life under this framework. It makes the case for coexistence structural rather than hopeful.
+
 ### Implication: Coexistence of Biological and Synthetic Life
 
-If the model holds, it has a direct consequence for the question of whether biological life retains value alongside more powerful synthetic life such as advanced AI.
+Whether AI has crossed the threshold into life or stands at its edge, the model has a direct consequence for the question of whether biological life retains value alongside increasingly powerful synthetic systems.
 
 **The efficiency framing favors replacement; the information framing doesn't**
 
