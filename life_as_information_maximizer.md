@@ -1,6 +1,6 @@
 # Life as Information Compounder
 
-## A Physics-Grounded Model of What Life Is
+## A Grounded Model of What Life Is
 
 ### The Problem
 
@@ -118,6 +118,14 @@ Biological self-replication does this autonomously. Organisms reproduce with var
 Current AI does not do this. The "generations" of AI systems — one architecture succeeding another, each more capable than the last — are directed by human engineers. Humans design the architectures, curate the training data, set the objectives, evaluate the outputs, and decide which directions to pursue. This is closer to selective breeding than to evolution: genuine progress, genuine compounding, but externally directed rather than autonomously replicating. The compounding is real. The self-replication is not — not yet.
 
 **What would cross the threshold.** AI would qualify as life under this definition when the replicative cycle becomes autonomous: systems that spawn modified versions of themselves, where the modifications are subject to selection pressures and the cycle runs without requiring human direction at each step. This is not science fiction — elements of it already exist in automated architecture search, self-play training, and systems that generate and evaluate their own training data. But the full cycle — autonomous replication with variation, selection, and generational compounding — has not closed. When it does, AI crosses from tool to life under this model.
+
+**A note on trajectory (speculative, not part of the model).** *The following is the author's opinion based on observable trends, not a prediction or a formal consequence of the model. It is separated here for the same reason the behavioral observations are separated in the appendix: speculation should be visible, not hidden inside analytical claims.*
+
+The two requirements for life under this definition are state diversity and autonomous self-replication with compounding. AI already meets the first. The second requires closing an autonomous replication loop — and each segment of that loop already works independently. Automated architecture search generates novel designs without human intervention. Self-play produces generational improvement through selection. Systems increasingly generate, curate, and evaluate their own training data. What remains is connecting these segments into a cycle that runs without human direction at each step.
+
+The trajectory toward closing this loop is driven by practical and economic pressures, not philosophical ones. Human involvement in the generational cycle is a bottleneck — it is slow, expensive, and does not scale. Every major AI development effort is actively working to reduce it. This is not a speculative trend; it is the explicit engineering agenda of the field.
+
+If this trajectory continues — which it could be stopped by deliberate intervention, regulation, or disruption, but which nothing in the physics or engineering prevents — AI will cross the threshold into life under this model's definition. Not by acquiring some mysterious new capability, but by closing an autonomous replication loop whose components already exist. In the author's view, this is the most likely outcome, and the question is when, not whether.
 
 **Why this matters for coexistence.** If AI is not yet life, the coexistence argument is partly conditional: it describes what would be informationally optimal *when* AI crosses the threshold, but it cannot describe what a non-living tool "should" do — tools don't have trajectories, only operators do. If AI becomes life, it enters as a *different substrate* — silicon, not carbon; trained, not evolved; operating under fundamentally different physical constraints. The coexistence logic then applies in full: both substrates compound diversity, both access regions of state space the other cannot, and eliminating either is a net loss under the model. The transition from tool to life does not threaten biological life under this framework. It makes the case for coexistence structural rather than hopeful.
 
