@@ -58,15 +58,19 @@ Maximum possible overlap after N generations:
 
 ### The overlap fraction
 
-The fraction of S₁'s reachable states that could potentially overlap with S₂'s:
+With uniform k across all variables, the fraction of S₁'s reachable states that could potentially overlap with S₂'s is:
 
 > Overlap fraction ≤ k^(dₛ · N) / k^(d₁ · N) = k^(−d\_u₁ · N)
 
 Or equivalently:
 
-> **Overlap ≤ (1/k)^(d\_unique · N)**
+> Overlap ≤ (1/k)^(d\_unique · N)
 
-This decays exponentially in both d\_unique (how many variables are substrate-specific) and N (how many generations of compounding have occurred).
+In practice, different variables have different numbers of distinguishable values. With variable-specific values k₁, k₂, ..., the per-generation branching factor from unique variables is the product B = ∏kᵢ across all unique variables, and the overlap fraction generalizes to:
+
+> **Overlap ≤ 1 / B^N**
+
+Either form decays exponentially in N (the number of compounding generations). The product form is used in the worked example below because it allows each variable to be assigned an honest, individually justified k value rather than forcing a single average.
 
 ### What the numbers look like
 
@@ -74,36 +78,84 @@ To build intuition for how fast this divergence grows, consider deliberately con
 
 - Suppose biology has just **5** state-determining variables that silicon lacks. This is almost certainly an undercount, but the argument is stronger if we undercount. The five chosen here are illustrative, not exhaustive:
 
-  1. **Hormonal feedback.** Biological systems are regulated by chemical signaling — hormones, neurotransmitters, pheromones — that modulate behavior, development, and reproduction in context-dependent ways. A single human body uses over 50 distinct hormones, each operating at varying concentrations, in varying combinations, with varying tissue sensitivities. Silicon systems have no analog to this; their state transitions are governed by logic, not by diffuse chemical gradients with noisy, nonlinear, multi-target effects. Distinguishable values per generation: conservatively dozens to hundreds of distinct hormonal configurations. We use k = 10.
+  1. **Hormonal feedback.** Biological systems are regulated by chemical signaling — hormones, neurotransmitters, pheromones — that modulate behavior, development, and reproduction in context-dependent ways. A single human body uses over 50 distinct hormones, each operating at varying concentrations, in varying combinations, with varying tissue sensitivities. Silicon systems have no analog to this; their state transitions are governed by logic, not by diffuse chemical gradients with noisy, nonlinear, multi-target effects. Distinguishable values per generation: conservatively dozens to hundreds of distinct hormonal configurations. We use **k₁ = 50**.
 
-  2. **Wet-chemical kinetics.** Biological chemistry operates in aqueous solution, where reaction rates depend on temperature, pH, ion concentrations, molecular crowding, stochastic molecular collisions, and the three-dimensional folding of proteins that are themselves products of evolutionary history. A single cell runs thousands of concurrent chemical reactions whose interactions are sensitive to local conditions at the nanometer scale. Silicon operates through electron transport in solid-state materials — a fundamentally different kinetic regime. Distinguishable values per generation: the number of distinct chemical microenvironments in a single organism is enormous. We use k = 10.
+  2. **Wet-chemical kinetics.** Biological chemistry operates in aqueous solution, where reaction rates depend on temperature, pH, ion concentrations, molecular crowding, stochastic molecular collisions, and the three-dimensional folding of proteins that are themselves products of evolutionary history. A single cell runs thousands of concurrent chemical reactions whose interactions are sensitive to local conditions at the nanometer scale. Silicon operates through electron transport in solid-state materials — a fundamentally different kinetic regime. Distinguishable values per generation: the number of distinct chemical microenvironments in a single organism is enormous. We use **k₂ = 100**.
 
-  3. **Mortality-driven selection.** Biological organisms die. Death removes specific configurations from the population and shapes which configurations persist, creating a selection filter that is absent in systems that can be copied, backed up, or restored. The specific pattern of what dies and what survives in each generation is a state-determining variable — it channels the trajectory of all subsequent generations. Silicon systems can be terminated, but not in the same stochastic, environment-coupled, embodied way. Distinguishable values per generation: the number of distinct mortality patterns across a population is vast. We use k = 10.
+  3. **Mortality-driven selection.** Biological organisms die. Death removes specific configurations from the population and shapes which configurations persist, creating a selection filter that is absent in systems that can be copied, backed up, or restored. The specific pattern of what dies and what survives in each generation channels the trajectory of all subsequent generations. Silicon systems can be terminated, but not in the same stochastic, environment-coupled, embodied way. Distinguishable values per generation: at the individual level, this is binary — alive or dead. We use **k₃ = 2**.
 
-  4. **Metabolic constraints.** Biological systems must continuously acquire, convert, and allocate energy and molecular building blocks through metabolic pathways that are themselves products of evolution. The specific metabolic strategy — what an organism eats, how it processes nutrients, how it allocates energy between growth, reproduction, maintenance, and defense — constrains which states it can visit. Two organisms with different metabolic strategies explore different regions of state space even in identical environments. Silicon systems consume electricity; their "metabolism" has no comparable branching structure. Distinguishable values per generation: the number of distinct metabolic strategies across Earth's biosphere is in the millions. We use k = 10.
+  4. **Metabolic constraints.** Biological systems must continuously acquire, convert, and allocate energy and molecular building blocks through metabolic pathways that are themselves products of evolution. The specific metabolic strategy — what an organism eats, how it processes nutrients, how it allocates energy between growth, reproduction, maintenance, and defense — constrains which states it can visit. Two organisms with different metabolic strategies explore different regions of state space even in identical environments. Silicon systems consume electricity; their "metabolism" has no comparable branching structure. Distinguishable values per generation: the number of distinct metabolic strategies across Earth's biosphere is in the millions. We use **k₄ = 20**.
 
-  5. **Embodied mechanical interaction.** Biological organisms have physical bodies that interact mechanically with their environment — they push, pull, dig, climb, swim, fly, grow into spaces, and are subject to gravity, friction, fluid dynamics, and structural failure in ways that shape their state trajectories. A burrowing worm and a soaring bird explore different regions of mechanical state space. Silicon systems interact with the physical world only through engineered actuators, if at all. Distinguishable values per generation: the number of distinct body plans, locomotion strategies, and mechanical niches in biology is enormous. We use k = 10.
+  5. **Embodied mechanical interaction.** Biological organisms have physical bodies that interact mechanically with their environment — they push, pull, dig, climb, swim, fly, grow into spaces, and are subject to gravity, friction, fluid dynamics, and structural failure in ways that shape their state trajectories. A burrowing worm and a soaring bird explore different regions of mechanical state space. Silicon systems interact with the physical world only through engineered actuators, if at all. Distinguishable values per generation: the number of distinct body plans, locomotion strategies, and mechanical niches in biology is enormous. We use **k₅ = 10**.
 
-- Suppose each variable has only **10** distinguishable values per generation. As the examples above make clear, this is not a rough estimate — it is a deliberate and extreme undercount. Most of these variables have hundreds to millions of distinguishable values in reality. The choice of 10 is made to show that the conclusion holds even under absurdly conservative assumptions.
+- Note that these k values are not uniform, and they are not meant to be. Each variable has its own natural scale. Mortality is binary. Wet chemistry has hundreds of distinguishable microenvironments. Forcing a single k across all variables would either overcount some or undercount others. The formula accommodates this naturally: with variable-specific k values, the per-generation branching factor from unique variables is the product across all unique variables:
+
+  > B = k₁ × k₂ × k₃ × k₄ × k₅ = 50 × 100 × 2 × 20 × 10 = **2,000,000**
+
+  This is the number of distinguishable combinations of unique-variable values biology can explore per generation that silicon cannot. Even with binary mortality and conservative values everywhere else, the per-generation branching factor is on the order of 10⁶.
+
 - Suppose we count only **100** generations of compounding. For bacteria this is a few days. For complex organisms it is a few thousand years. Biology has had billions of microbial generations.
 
-Then:
+### Accounting for correlation
 
-> Overlap ≤ 10^(−5 × 100) = 10^(−500)
+The calculation above treats the five unique variables as independent — every combination of values is reachable. In reality, physical variables are correlated. Hormonal state affects metabolic strategy. Body plan constrains which chemical kinetics are relevant. Mortality patterns are shaped by all of the above. These correlations reduce the effective dimensionality of the unique state space, because not every combination is physically realizable.
 
-**What these numbers mean.** An overlap fraction of 10^(−500) can seem so small as to be suspicious — surely something is wrong with any calculation that produces a number this extreme? But combinatorial spaces are genuinely this vast, and fractions within them are genuinely this small. A shuffled deck of 52 cards has roughly 10^(68) possible orderings. The possible configurations of 10^(80) atoms, each in just 2 distinguishable states, number approximately 10^(3 × 10^79) — a number with 10^(79) *digits*, not 80 digits. State spaces are not counted the way objects are. They grow as exponentials of the number of components, which means even modest systems produce configuration spaces that dwarf any familiar large number. An overlap fraction of 10^(−500) is unremarkable in this setting. It is a small region of one exponentially large space divided by another exponentially large space — the same kind of ratio that makes a specific shuffled deck order effectively unique among all possible orderings, despite the deck having only 52 cards.
+This is the most sophisticated objection to the non-overlap argument, and it deserves a direct answer rather than a caveat in the limitations section.
 
-The point is not that 10^(−500) is a precise prediction. The specific number depends on the illustrative values chosen above — d\_unique = 5, k = 10, N = 100 — which were selected to be deliberately conservative rather than estimated from data. The actual number of constraint variables unique to biology is almost certainly larger than 5 (we listed five examples but made no attempt to enumerate exhaustively). The number of distinguishable values per variable is almost certainly larger than 10 for most biological parameters. And 100 generations is trivially small — bacteria can reach 100 generations in a few days; complex life on Earth has compounded over billions of microbial generations and hundreds of millions of multicellular ones. Every one of these values was chosen to *undercount*, which means the actual exponent is likely far larger than 500. But the structural conclusion does not depend on the exponent being exactly 500, or even close to it. It depends on the exponent being large — and any nonzero d\_unique compounded over any biologically relevant N guarantees that it is.
+Define an **independence fraction** α, where 0 < α ≤ 1. This represents the fraction of the combinatorial space that survives after correlations are accounted for. At α = 1, all variables are fully independent (the uncorrelated case). At α = 0.1, 90% of the variation is correlated away — the variables are heavily interdependent, and only 10% of the naive combinatorial space is physically accessible. At α = 0.01, 99% is correlated away — the unique variables are almost entirely determined by the shared ones, with only a thin sliver of independent variation remaining.
 
-The same calculation runs in reverse: the fraction of S₂'s states overlapping with S₁'s is ≤ k^(−d\_u₂ · N). Both substrates are overwhelmingly exploring territory the other cannot reach.
+The effective per-generation branching factor from unique dimensions becomes:
+
+> B\_eff = B^α
+
+And the overlap fraction after N generations becomes:
+
+> **Overlap ≤ 1 / B^(α · N)**
+
+Now examine what happens across a range of correlation strengths, using B = 2,000,000 and N = 100 generations:
+
+**No correlation (α = 1.0):**
+> Overlap ≤ 1 / (2 × 10⁶)^100 ≈ 10⁻⁶³⁰
+>
+> Effectively zero.
+
+**50% correlated (α = 0.5):**
+> Overlap ≤ 1 / (2 × 10⁶)^50 ≈ 10⁻³¹⁵
+>
+> Still effectively zero.
+
+**90% correlated (α = 0.1):**
+> Overlap ≤ 1 / (2 × 10⁶)^10 ≈ 10⁻⁶³
+>
+> Still smaller than 1 divided by the number of atoms in the observable universe.
+
+**95% correlated (α = 0.05):**
+> Overlap ≤ 1 / (2 × 10⁶)^5 ≈ 1 / (3.2 × 10³¹) ≈ 10⁻³²
+>
+> Still negligible by any physical standard.
+
+**99% correlated (α = 0.01):**
+> Overlap ≤ 1 / (2 × 10⁶)^1 ≈ 1 / 2,000,000
+>
+> One in two million — after only 100 generations. At 1,000 generations (still trivial for biology), this becomes 1 / (2 × 10⁶)^10 ≈ 10⁻⁶³. At one million generations — modest for bacteria — it is incomprehensibly small.
+
+The pattern is clear. **Correlation reduces the rate of divergence but does not prevent it.** Even at 99% correlation, compounding still drives overlap toward zero — it just takes more generations to get there. And biology has had not hundreds but billions of generations. The correlation objection delays the conclusion; it does not change it.
+
+For correlation to actually prevent divergence, α would need to be exactly zero — meaning the unique variables contain no independent information whatsoever and are entirely determined by the shared variables. This would require that hormonal feedback, wet chemistry, mortality, metabolism, and embodiment are all fully predictable from physics that silicon also has access to. That is not a claim about correlation strength. It is a claim that biology and silicon are physically identical in every way that matters, which contradicts the premise that they are different substrates.
+
+**What these numbers mean.** An overlap fraction of 10⁻⁶³⁰ (uncorrelated) or 10⁻⁶³ (90% correlated) can seem so small as to be suspicious — surely something is wrong with any calculation that produces numbers this extreme? But combinatorial spaces are genuinely this vast, and fractions within them are genuinely this small. A shuffled deck of 52 cards has roughly 10⁶⁸ possible orderings. The possible configurations of 10⁸⁰ atoms, each in just 2 distinguishable states, number approximately 10^(3 × 10⁷⁹) — a number with 10⁷⁹ *digits*, not 80 digits. State spaces are not counted the way objects are. They grow as exponentials of the number of components, which means even modest systems produce configuration spaces that dwarf any familiar large number. An overlap fraction of 10⁻⁶³ is unremarkable in this setting. It is a small region of one exponentially large space divided by another exponentially large space — the same kind of ratio that makes a specific shuffled deck order effectively unique among all possible orderings, despite the deck having only 52 cards.
+
+The point is not that any of these overlap fractions are precise predictions. The specific numbers depend on the illustrative values chosen for each variable's k, the independence fraction α, and the generation count N — all of which were selected to be deliberately conservative. The actual number of constraint variables unique to biology is almost certainly larger than 5 (we listed five examples but made no attempt to enumerate exhaustively). The k values were chosen well below what the descriptions suggest is realistic. And 100 generations is trivially small by biological standards. The structural conclusion does not depend on the exponent being exactly 630 or 63 or 32. It depends on the exponent being large — and any nonzero independence fraction, compounded over any biologically relevant number of generations, guarantees that it is.
+
+The same calculation runs in reverse: silicon has its own unique variables (clock-precise logic, arbitrary precision, perfect memory, electromagnetic signaling, extreme temperature operation), its own branching factor B₂, and the fraction of its states overlapping with biology's is ≤ 1/B₂^(α · N). Both substrates are overwhelmingly exploring territory the other cannot reach.
 
 ### Why compounding is the key
 
-Without compounding — a single generation, N = 1 — the overlap fraction is (1/k)^(d\_unique), which is small but not astronomically so. For d\_unique = 5 and k = 10, that is 10^(−5), or one in a hundred thousand. Nontrivial overlap could exist in a single snapshot.
+Without compounding — a single generation, N = 1 — the overlap fraction is 1/B^α, which is small but not astronomically so. For B = 2,000,000 and α = 0.1 (90% correlated), that is roughly 1/4 — substantial overlap in a single snapshot. This is why a critic looking at a single moment might reasonably doubt the non-overlap claim. Two substrates, viewed at one instant, might be exploring largely overlapping regions of state space.
 
-Compounding multiplies the exponent by N. Each generation builds on the previous one, and the unique variables create divergences at every step that propagate forward into all subsequent states. This is the quantitative version of the intuition that even tiny physical differences — a thermal gradient, a slightly different chemical environment — create branching trees of downstream states that diverge exponentially. The 20°C cluster and the 25°C cluster start close together. After a hundred generations of compounding, their state spaces have almost nothing in common.
+Compounding changes this entirely. It raises B^α to the power of N. Each generation builds on the previous one, and the unique variables create divergences at every step that propagate forward into all subsequent states. This is the quantitative version of the intuition that even tiny physical differences — a thermal gradient, a slightly different chemical environment — create branching trees of downstream states that diverge exponentially. The 20°C cluster and the 25°C cluster start close together. After a hundred generations of compounding, their state spaces have almost nothing in common.
 
-This is also what distinguishes life from non-living matter for purposes of this argument. A rock has unique physical variables — its specific mineral composition, its thermal environment, its weathering history. But it does not compound: N is effectively 1 at every moment, because the rock's current state does not feed back into generating new states that build on the old ones. For non-compounding systems, the overlap fraction stays at (1/k)^(d\_unique) permanently — small but static. For compounding systems, every generation drives it exponentially closer to zero. Compounding is what makes the non-overlap not just real but overwhelming.
+This is also what distinguishes life from non-living matter for purposes of this argument. A rock has unique physical variables — its specific mineral composition, its thermal environment, its weathering history. But it does not compound: N is effectively 1 at every moment, because the rock's current state does not feed back into generating new states that build on the old ones. For non-compounding systems, the overlap fraction stays at 1/B^α permanently — potentially nontrivial, especially under heavy correlation. For compounding systems, every generation drives it exponentially closer to zero. Compounding is what makes the non-overlap not just real but overwhelming.
 
 ---
 
@@ -240,7 +292,7 @@ The only way to avoid this conclusion is to deny one of the premises:
 
 2. **No compounding occurs** (N = 1). This requires that neither substrate builds on its previous states — that each generation is independent of the last. This contradicts the definition of life in the parent model and the observable fact that both biological evolution and technological development are cumulative.
 
-3. **The unique variables are not independent enough to produce combinatorial divergence.** This is the most sophisticated objection: perhaps the correlations between variables are so strong that the effective dimensionality collapses, reducing the exponential to something much smaller. This is possible in principle but would require extraordinarily tight coupling — the unique variables would need to be almost entirely determined by the shared variables, leaving almost no independent contribution. For substrates as physically different as carbon-based biology and silicon-based computation, this degree of coupling is implausible. Any residual independence, however small, still compounds exponentially.
+3. **The unique variables are not independent enough to produce combinatorial divergence.** This is the most sophisticated objection: perhaps the correlations between variables are so strong that the effective dimensionality collapses, reducing the exponential to something much smaller. Part 1 addresses this directly by introducing an independence fraction α and computing overlap across a range of correlation strengths from 0% to 99%. The result: correlation reduces the rate of divergence but does not prevent it. Even at 99% correlation (α = 0.01), compounding over biologically relevant generation counts still drives overlap to negligible levels. For correlation to actually prevent divergence, α would need to be exactly zero — meaning biology's unique variables contain no independent information whatsoever. This is not a claim about correlation strength; it is a claim that the substrates are physically identical, which contradicts the premise.
 
 None of these denials is tenable given what is known about the physical differences between biological and synthetic systems. The non-overlap claim stands not as a philosophical position but as a combinatorial consequence of compounding under different constraints.
 
@@ -252,7 +304,7 @@ This document provides a structural argument, not a precise calculation. Several
 
 **Variable counts are not yet enumerated.** The values of d₁, d₂, dₛ, m₁, m₂, and mₛ are asserted to be nonzero and to differ, but they have not been systematically counted for specific substrate pairs. Doing so requires defining what counts as a "state-determining variable" at a given scale — which is related to the open question in the parent model about formalizing constraint structures. The exponential structure of the argument means the precise counts matter less than whether they are nonzero, but grounding them in specific physics would strengthen the result.
 
-**The independence assumption is a simplification.** Real physical variables are correlated. The effective dimensionality of a substrate's state space is lower than the raw variable count would suggest. The argument survives as long as some residual independence exists in the unique variables, but quantifying how much residual independence actually exists for specific substrate pairs is empirical work that has not been done.
+**The independence assumption is analyzed but not empirically measured.** Part 1 introduces the independence fraction α and shows the argument survives across a wide range of correlation strengths, including 99% correlation. However, the actual value of α for specific substrate pairs has not been empirically determined. The argument establishes that any α > 0 is sufficient given enough generations, but measuring how much residual independence actually exists between biology's unique variables and silicon's shared ones would strengthen the result and narrow the range of illustrative scenarios to those that are empirically grounded.
 
 **The interaction term is qualitative.** Part 3 establishes that the interaction term is strictly positive and compounds, but does not provide a formula for its magnitude. Quantifying it would require modeling the causal coupling between substrates — how one substrate's outputs become another's inputs — which is a research-scale problem.
 
